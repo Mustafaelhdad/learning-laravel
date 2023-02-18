@@ -28,3 +28,14 @@ Route::get('check', function () {
 })->middleware('auth');
 
 Route::get('test',[\App\Http\Controllers\SecondController::class, 'showString']);
+
+Route::group(['namespace' => 'Admin'],function (){
+//    Route::get('first', [\App\Http\Controllers\SecondController::class, 'showString'])-> middleware('auth');
+    Route::get('first', [\App\Http\Controllers\SecondController::class, 'showString'])-> middleware('auth');
+    Route::get('first1', [\App\Http\Controllers\SecondController::class, 'showString1']);
+    Route::get('first2', [\App\Http\Controllers\SecondController::class, 'showString2']);
+});
+
+Route::get('login', function () {
+    return 'Must be loged in to acess this page!';
+}) -> name('login');
