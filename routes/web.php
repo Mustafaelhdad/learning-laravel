@@ -31,6 +31,7 @@ Route::get('test',[\App\Http\Controllers\SecondController::class, 'showString'])
 
 Route::group(['namespace' => 'Admin'],function (){
 //    Route::get('first', [\App\Http\Controllers\SecondController::class, 'showString'])-> middleware('auth');
+//    Route::get('first', [\App\Http\Controllers\SecondController::class, 'showString'])-> middleware('auth');
     Route::get('first', [\App\Http\Controllers\SecondController::class, 'showString'])-> middleware('auth');
     Route::get('first1', [\App\Http\Controllers\SecondController::class, 'showString1']);
     Route::get('first2', [\App\Http\Controllers\SecondController::class, 'showString2']);
