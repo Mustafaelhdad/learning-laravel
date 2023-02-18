@@ -26,3 +26,5 @@ Route::group(['prefix' => 'users', 'middleware' => 'auth'], function() {
 Route::get('check', function () {
     return 'middleware';
 })->middleware('auth');
+
+Route::get('test',[\App\Http\Controllers\SecondController::class, 'showString']);
