@@ -9,4 +9,11 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
+
+    public function sayHi () {
+        $data=[];
+        $data['welcomming'] = "Welcome user!";
+        $data['age'] = 25;
+        return view('userWelcome', $data);
+    }
 }

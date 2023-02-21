@@ -40,3 +40,7 @@ Route::group(['namespace' => 'Admin'],function (){
 Route::get('login', function () {
     return 'Must be loged in to acess this page!';
 }) -> name('login');
+
+Route::resource('news', \App\Http\Controllers\NewsController::class);
+
+Route::get('welcomeuser', [\App\Http\Controllers\Controller::class, 'sayHi']);
