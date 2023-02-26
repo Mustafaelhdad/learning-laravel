@@ -44,3 +44,7 @@ Route::get('login', function () {
 Route::resource('news', \App\Http\Controllers\NewsController::class);
 
 Route::get('welcomeuser', [\App\Http\Controllers\Controller::class, 'sayHi']);
+
+Route::get('landing', function () {
+    return view('landing');
+});
