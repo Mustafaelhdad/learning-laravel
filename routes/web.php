@@ -48,3 +48,11 @@ Route::get('welcomeuser', [\App\Http\Controllers\Controller::class, 'sayHi']);
 Route::get('landing', function () {
     return view('landing');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
