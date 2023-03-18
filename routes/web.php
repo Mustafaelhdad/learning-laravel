@@ -60,3 +60,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/redirect/{service}', [App\Http\Controllers\SocialContorller::class, 'redirect']);
 
 Route::get('/callback/{service}', [App\Http\Controllers\SocialContorller::class, 'callback']);
+
+Route::get('/fillable', [App\Http\Controllers\CrudController::class, 'getOffers']);
+
+Route::group(['prefix' => 'offers'], function() {
+    Route::get('/fillable', [App\Http\Controllers\CrudController::class, 'store']);
+});
