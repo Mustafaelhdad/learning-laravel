@@ -14,11 +14,28 @@ class CrudController extends Controller {
     return Offer::seletct('id', 'name') -> get();
   }
 
-  public function store() {
-    App\Models\Offer::create([
-      'name' => 'some offer',
-      'price' => '2334',
-      'details' => 'Details of the offer'
+  // public function store() {
+  //   App\Models\Offer::create([
+  //     'name' => 'some offer',
+  //     'price' => '2334',
+  //     'details' => 'Details of the offer'
+  //   ]);
+  // }
+
+  public function create() {
+    return view('offer.create');
+  }
+
+  public function store(Request $request) {
+    // data validation
+
+    // insert data
+    Offer::create([
+      'name' => $request -> name,
+      'price' => $request -> price,
+      'details' => $request -> details,
     ]);
+
+    return 'saved successfuly';
   }
 }

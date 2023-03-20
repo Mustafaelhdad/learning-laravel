@@ -64,5 +64,8 @@ Route::get('/callback/{service}', [App\Http\Controllers\SocialContorller::class,
 Route::get('/fillable', [App\Http\Controllers\CrudController::class, 'getOffers']);
 
 Route::group(['prefix' => 'offers'], function() {
-    Route::get('/fillable', [App\Http\Controllers\CrudController::class, 'store']);
+    // Route::get('/fillable', [App\Http\Controllers\CrudController::class, 'store']);
+
+    Route::get('create', [App\Http\Controllers\CrudController::class, 'create']);
+    Route::post('store', [App\Http\Controllers\CrudController::class, 'store']);
 });
